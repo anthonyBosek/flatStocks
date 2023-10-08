@@ -1,6 +1,4 @@
-import React from "react";
-
-function Stock() {
+const Stock = () => {
   return (
     <div>
       <div className="card">
@@ -11,5 +9,5 @@ function Stock() {
       </div>
     </div>
   );
-}
+};
 export default Stock;
