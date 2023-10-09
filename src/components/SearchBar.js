@@ -1,4 +1,4 @@
-const SearchBar = () => {
+const SearchBar = ({ sortTxt, filterTxt, handleSort, handleFilter }) => {
   return (
     <div>
       <strong>Sort by:</strong>
@@ -7,8 +7,8 @@ const SearchBar = () => {
           type="radio"
           value="Alphabetically"
           name="sort"
-          checked={null}
-          onChange={null}
+          checked={sortTxt === "Alphabetically"}
+          onChange={handleSort}
         />
         Alphabetically
       </label>
@@ -17,15 +17,16 @@ const SearchBar = () => {
           type="radio"
           value="Price"
           name="sort"
-          checked={null}
-          onChange={null}
+          checked={sortTxt === "Price"}
+          onChange={handleSort}
         />
         Price
       </label>
       <br />
       <label>
         <strong>Filter:</strong>
-        <select onChange={null}>
+        <select value={filterTxt} onChange={handleFilter}>
+          <option value="">Select Type</option>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>
